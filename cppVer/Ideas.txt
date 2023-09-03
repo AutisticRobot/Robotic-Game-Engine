@@ -1,0 +1,10 @@
+-add GUI
+    -add viewport: a visuial of all elements in the scene
+    -add ability to drag immages onto viewport
+    -ability to hide sprites from rendering
+-add scene save files
+    -scene loader
+-add layer renderer
+-object collision
+-raycast
+-delta
