@@ -10,7 +10,7 @@ int frame = 0;
 int main()
 {
     sf::Font font;
-    if (!font.loadFromFile("../data/fonts/Minecraftia.ttf"))
+    if (!font.loadFromFile("resources/fonts/Minecraftia.ttf"))
     {
         // error...
     }
