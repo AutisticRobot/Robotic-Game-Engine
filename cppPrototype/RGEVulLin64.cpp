@@ -12,8 +12,6 @@ using namespace std;
 int frame = 0;
 sf::Vector2u winSize(300,200);//unsigned int Vector2 for window size
 sf::Vector2i winPos(0,0);//unsigned int Vector2 for window size
-sf::VertexArray renerTri(sf::Vector2i winPos, sf::Vector2u winSize);
-void textMine(sf::Text &text, sf::Font &font);
 sf::Text mineText;
     sf::Font font;
 
