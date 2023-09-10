@@ -1,3 +1,12 @@
+//Robotic Game Engine
+//by Tyler Michael Kormannn (tylerkormann.com)
+//Version 0.0.0.x
+//
+//Curently the worlds worst game engine!! : D
+//
+//Dependences
+//SFML
+
 
 #include <iostream>
 #include <fstream>
