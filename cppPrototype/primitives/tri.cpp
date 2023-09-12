@@ -1,21 +1,13 @@
 
+#include <SFML/Graphics.hpp>
 #include <SFML/System/Vector2.hpp>
+#include "tri.hpp"
 
 class triangle
 {
-    // create an array of 3 vertices that define a triangle primitive
-    sf::VertexArray triangle(sf::Triangles, 3);
-    sf::Vector2f ratio(1,1);
 
     triangle()
     {
-    ratio = new Vector2f(static_cast<float>(winSize.x), static_cast<float>(winSize.y));
-    triangle(ratio);
-    }
-    triangle(sf::Vector2f ratio)
-    {
-        this.ratio = ratio;
-
         // define the position of the triangle's points
         triangle[0].position = sf::Vector2f(150.f, 400.f);
         triangle[1].position = sf::Vector2f(500.f, 50.f);
@@ -27,6 +19,12 @@ class triangle
         triangle[0].color = sf::Color::Blue;
         triangle[1].color = sf::Color::Red;
         triangle[2].color = sf::Color::Green;
+    }
+    triangle(sf::Vector2f ratio)
+    {
+        this.ratio = ratio;
+
+        triangle();
     }
 
 
@@ -43,5 +41,10 @@ class triangle
         triangle[1].position.y *= ratio.y;
         triangle[2].position.y *= ratio.y;
 
+    }
+
+    sf::VertexArray getTri()
+    {
+        return triangle;
     }
 }

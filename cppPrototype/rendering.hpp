@@ -10,3 +10,8 @@ using namespace std;
 
 sf::VertexArray renerTri(sf::Vector2i winPos, sf::Vector2u winSize);
 void textMine(sf::Text &text, sf::Font &font);
+
+#include <SFML/Graphics.hpp>
+
+
+void textMine(sf::Text &text, sf::Font &font);

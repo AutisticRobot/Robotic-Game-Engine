@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <string>
-#include "rendering.h"
+#include "rendering.hpp"
 
 using namespace std;
 

@@ -14,15 +14,17 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Vector2.hpp>
-#include "rendering.h"
+#include "rendering.hpp"
+#include "primitives/tri.hpp"
 
 using namespace std;
 
 int frame = 0;
 sf::Vector2u winSize(300,200);//unsigned int Vector2 for window size
 sf::Vector2i winPos(0,0);//unsigned int Vector2 for window size
+sf::Vector2f ratio;
 sf::Text mineText;
-    sf::Font font;
+sf::Font font;
 
 int main()
 {
@@ -32,7 +34,9 @@ int main()
     //setFont() for some reason needs to be in the same context as draw function;
 
     sf::RenderWindow window(sf::VideoMode(winSize.x, winSize.y), "RGE");
-    //window.setVerticalSyncEnabled(true);//VSync
+    window.setVerticalSyncEnabled(true);//VSync
+
+    triangle testTri = new triangle(ratio);
 
     
 
@@ -42,6 +46,7 @@ int main()
     {
         winSize = window.getSize();
         winPos = window.getPosition();
+        ratio = new Vector2f(static_cast<float>(winSize.x), static_cast<float>(winSize.y));
         //mineText.setString(std::to_string(frame));
         sf::Event event;
         while (window.pollEvent(event))
