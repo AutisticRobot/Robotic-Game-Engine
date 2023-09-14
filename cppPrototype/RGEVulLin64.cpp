@@ -25,6 +25,7 @@ sf::Vector2i winPos(0,0);//unsigned int Vector2 for window size
 sf::Vector2f ratio;
 sf::Text mineText;
 sf::Font font;
+tri testTri;
 
 int main()
 {
@@ -36,7 +37,6 @@ int main()
     sf::RenderWindow window(sf::VideoMode(winSize.x, winSize.y), "RGE");
     window.setVerticalSyncEnabled(true);//VSync
 
-    tri testTri(ratio);
 
     
 
@@ -48,7 +48,7 @@ int main()
         winPos = window.getPosition();
         ratio.x = static_cast<float>(winSize.x);
         ratio.y = static_cast<float>(winSize.y);
-        testTri.updateRatio(ratio);
+        //testTri.updateRatio(ratio);
         //mineText.setString(std::to_string(frame));
         sf::Event event;
         while (window.pollEvent(event))
@@ -60,7 +60,7 @@ int main()
         }
 
         window.clear();
-        window.draw(testTri.getTri());
+        //window.draw(testTri.getTri());
         window.draw(mineText);
 
         window.display();

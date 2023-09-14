@@ -1,6 +1,3 @@
-
-#include <SFML/Graphics.hpp>
-#include <SFML/System/Vector2.hpp>
 #include "tri.hpp"
 
 
@@ -18,12 +15,12 @@ tri::tri()
     triangle[1].color = sf::Color::Red;
     triangle[2].color = sf::Color::Green;
 }
-tri::tri(sf::Vector2f inRatio)
-{
-    ratio = inRatio;
-
-    tri();
-}
+//tri::tri(sf::Vector2f inRatio)
+//{
+//    tri();
+//    ratio = inRatio;
+//
+//}
 
 
 int tri::updateRatio(sf::Vector2f inRatio)
