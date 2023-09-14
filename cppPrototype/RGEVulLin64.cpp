@@ -36,7 +36,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(winSize.x, winSize.y), "RGE");
     window.setVerticalSyncEnabled(true);//VSync
 
-    triangle testTri = new triangle(ratio);
+    tri testTri(ratio);
 
     
 
@@ -46,7 +46,9 @@ int main()
     {
         winSize = window.getSize();
         winPos = window.getPosition();
-        ratio = new Vector2f(static_cast<float>(winSize.x), static_cast<float>(winSize.y));
+        ratio.x = static_cast<float>(winSize.x);
+        ratio.y = static_cast<float>(winSize.y);
+        testTri.updateRatio(ratio);
         //mineText.setString(std::to_string(frame));
         sf::Event event;
         while (window.pollEvent(event))
@@ -58,7 +60,7 @@ int main()
         }
 
         window.clear();
-        window.draw(renerTri(winPos, winSize));
+        window.draw(testTri.getTri());
         window.draw(mineText);
 
         window.display();

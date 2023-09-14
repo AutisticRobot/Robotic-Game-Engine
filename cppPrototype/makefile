@@ -1,6 +1,6 @@
 PRE = build/
 
-RGE: RGEVulLin64.o rendering.o
+RGE: clean RGEVulLin64.o rendering.o
 	@g++ $(PRE)RGEVulLin64.o $(PRE)rendering.o -o $(PRE)RGE -lsfml-graphics -lsfml-window -lsfml-system
 	@./$(PRE)RGEBuild
 
