@@ -14,6 +14,7 @@ public:
     sf::VertexArray getTri();
 private:
     sf::Vector2f ratio;
-    sf::VertexArray *triangle;
+    sf::VertexArray *tmp;
+    sf::VertexArray triangle;
 
 };

@@ -49,7 +49,7 @@ int main()
         GRatio.x = static_cast<float>(winSize.x);
         GRatio.y = static_cast<float>(winSize.y);
         testTri.updateRatio(GRatio);
-        //mineText.setString(std::to_string(frame));
+        mineText.setString(std::to_string(frame));
         sf::Event event;
         while (window.pollEvent(event))
         {
