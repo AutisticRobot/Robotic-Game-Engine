@@ -1,17 +1,19 @@
 #pragma once
 
+#include <iostream>
+#include <string>
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <cstdlib>
 
 class tri
 {
 public:
     tri();
-    //tri(sf::Vector2f inRatio);
     int updateRatio(sf::Vector2f inRatio);
     sf::VertexArray getTri();
 private:
-    sf::VertexArray triangle;
     sf::Vector2f ratio;
+    sf::VertexArray *triangle;
 
 };
