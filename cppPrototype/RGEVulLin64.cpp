@@ -14,6 +14,7 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Vector2.hpp>
+#include "GLI/GLI.hpp"
 #include "rendering.hpp"
 #include "primitives/tri.hpp"
 
