@@ -28,7 +28,9 @@
 #include <SFML/Graphics/PrimitiveType.hpp>
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics.hpp>
 #include <vector>
+using namespace sf;
  
 namespace gli
 {
@@ -60,12 +62,13 @@ public:
  
 private:
  
-    virtual void draw(RenderTarget& target, RenderStates states) const;
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
  
 private:
  
     // Member data
+    VertexArray     copy;
     std::vector<Vertex> m_vertices;      
-    PrimitiveType       m_primitiveType; 
+    PrimitiveType   m_primitiveType; 
 };
 }

@@ -1,10 +1,4 @@
 
-#include <iostream>
-#include <SFML/Graphics.hpp>
-#include <SFML/System/Vector2.hpp>
-#include <cstdlib>
-#include <fstream>
-#include <string>
 #include "rendering.hpp"
 
 using namespace std;
