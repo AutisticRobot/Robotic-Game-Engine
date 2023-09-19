@@ -1,13 +1,23 @@
 
-#include <SFML/Graphics.hpp>
-#include <SFML/System/Vector2.hpp>
-
 
 //GLI or openGL Implamentation
 //curently just calls SFML
 //by Tyler Michael Kormann
 //(https://www.tylerkormann.com)
-//this is made so I can in the future either
+//this is made so I can, in the future, either
 //replace these functions with my own version
 //or even implament OpenGL myself without rewriting
 //the entire engine.
+
+
+//SFML objects to add
+
+//gli::Vector2
+//gli::Text
+//gli::Font
+//gli::Color
+//gli::Triangles
+//gli::Event
+//gli::RenderWindow
+//gli::VideoMode
+
