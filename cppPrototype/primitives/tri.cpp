@@ -39,9 +39,9 @@ int tri::updateRatio(sf::Vector2f inRatio)
     triangle[1].position.y /= ratio.y;
     triangle[2].position.y /= ratio.y;
 
-    std::cout << "part1: " << std::endl;
-    std::cout << ratio.x << std::endl;
-    std::cout << triangle[0].position.x << std::endl;
+    //std::cout << "part1: " << std::endl;
+    //std::cout << ratio.x << std::endl;
+    //std::cout << triangle[0].position.x << std::endl;
 
     ratio.x = 300.f / inRatio.x;
     ratio.y = 200.f / inRatio.y;
@@ -55,9 +55,9 @@ int tri::updateRatio(sf::Vector2f inRatio)
     triangle[1].position.y *= ratio.y;
     triangle[2].position.y *= ratio.y;
 
-    std::cout << "part2: " << std::endl;
-    std::cout << ratio.x << std::endl;
-    std::cout << triangle[0].position.x << std::endl;
+    //std::cout << "part2: " << std::endl;
+    //std::cout << ratio.x << std::endl;
+    //std::cout << triangle[0].position.x << std::endl;
 
 
     return 0;
