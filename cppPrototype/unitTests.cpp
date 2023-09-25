@@ -11,10 +11,18 @@
 bool selfTest = false;
 
 int decodeArgs(int argc, char *argv[]);
-int decodeArg(char *argv, int state = 0);
+int decodeArg(string argv, int state = 0);
 
 int main(int argc, char *argv[])
 {
+    if(std::string(argv[1]) == "-l")
+    {
+        selfTest = true;
+    }
+
+    decodeArgs(argc, argv);
+
+    std::cout << "End Diegnostic" << endl;
 
 }
 
@@ -22,16 +30,23 @@ int decodeArgs(int argc, char *argv[])
 {
     for(int i=1;i<argc;i++)
     {
-        decodeArg(argv[i]);
+        if(selfTest)
+        {
+        std::cout << "|" << argv[i] << "|" << endl;
+        }
+        decodeArg(std::string(argv[i]));
     }
+    return 0;
 }
-int decodeArg(char *argv, int state)
+int decodeArg(string argv, int state)
 {
-    switch (argv)
-    case 's':
+    if(argv == "-l")
+    {
         selfTest = true;
         return 0;
-    case default:
+    }
+
+    //default:
         std::cout << "error: " << argv << " not a valid argument" << endl;
         return 1;
 
