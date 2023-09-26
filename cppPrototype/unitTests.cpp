@@ -15,9 +15,10 @@ int decodeArg(string argv, int state = 0);
 
 int main(int argc, char *argv[])
 {
-    if(std::string(argv[1]) == "-l")
+    if(argc != 1 && std::string(argv[1]) == "-l")
     {
         selfTest = true;
+    std::cout << "Start Diegnostic" << endl;
     }
 
     decodeArgs(argc, argv);
