@@ -6,18 +6,18 @@
     //
     //}
  
-    Vector2(T X, T Y)
+    Vector2()//(T X, T Y)
     {
         x = X;
         y = Y;
     }
 
-    sf::Vector2 tosf()
-    {
+    //sf::Vector2 tosf()
+    //{
+    //    return sf::Vector2(x,y);
+    //}
 
-    }
-
-    Vector2 normalize(inVec Vector2)
+    Vector2<T> normalize(Vector2 inVec)
     {
         Vector2 output(inVec.x, inVec.y);
 

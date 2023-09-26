@@ -1,12 +1,13 @@
 
 #pragma once
  
-#include <SFML/System/Vector2.hpp>
+//#include <SFML/System/Vector2.hpp>
 #include <cmath>
 
-template<typename T>
+
 namespace gli
 {
+template<typename T>
 class Vector2
 {
 public:
@@ -15,14 +16,16 @@ public:
  
     Vector2(T X, T Y);
 
-    sf::Vector2 tosf();
+    //sf::Vector2 tosf();
 
-    Vector2 normalize(intVec Vector2);
+    
+
+    Vector2<T> normalize(Vector2 inVec);
 
 private:
 
 T x;
 T y;
 
-}
+};
 } // namespace gli
