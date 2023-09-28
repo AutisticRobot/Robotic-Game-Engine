@@ -20,7 +20,7 @@ public:
 
     
 
-    Vector2<T> normalize(Vector2 inVec);
+    Vector2<T> normalize(Vector2<T> inVec);
 
 private:
 
