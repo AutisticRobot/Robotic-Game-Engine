@@ -14,13 +14,34 @@ public:
  
     //Vector2();
  
-    Vector2(T X, T Y);
+    Vector2(T X, T Y)
+{
+    x = X;
+    y = Y;
+}
 
     //sf::Vector2 tosf();
 
     
 
-    Vector2<T> normalize(Vector2<T> inVec);
+    int normalize()
+{
+    Vector2 output(x, y);
+
+    output.x *= output.x;
+    output.y *= output.y;
+
+    T hyp = x + y;
+    hyp = sqrt(hyp);
+
+    output.x = x / hyp;
+    output.y = y / hyp;
+
+    x = output.x;
+    y = output.y;
+    return 0;
+
+}
 
 private:
 

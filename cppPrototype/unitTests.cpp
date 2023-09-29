@@ -11,13 +11,14 @@
 bool selfTest = false;
 bool vector2 = false;
 
+int argAll();
 int decodeArgs(int argc, char *argv[]);
 int decodeArg(string argv, int state = 0);
 int testVector2();
 
 int main(int argc, char *argv[])
 {
-    if(argc != 1 && )
+    if(argc != 1)
     {
         if(std::string(argv[1]) == "all")
         {
@@ -26,7 +27,10 @@ int main(int argc, char *argv[])
         if(std::string(argv[1]) == "-l")
         {
             selfTest = true;
-        std::cout << "Start Diegnostic" << endl;
+        }
+        if(selfTest)
+        {
+            std::cout << "Start Diegnostic" << std::endl;
         }
     }
     decodeArgs(argc, argv);
@@ -45,6 +49,7 @@ int argAll()
 {
     selfTest = true;
     vector2 = true;
+    return 0;
 }
 int decodeArgs(int argc, char *argv[])
 {
@@ -52,7 +57,7 @@ int decodeArgs(int argc, char *argv[])
     {
         if(selfTest)
         {
-        std::cout << "|" << argv[i] << "|" << endl;
+        std::cout << "|" << argv[i] << "|" << std::endl;
         }
         decodeArg(std::string(argv[i]));
     }
@@ -70,9 +75,13 @@ int decodeArg(string argv, int state)
         vector2 = true;
         return 0;
     }
+    if(argv == "all")
+    {
+        return 0;
+    }
 
     //default:
-        std::cout << "error: " << argv << " not a valid argument" << endl;
+        std::cout << "error: " << argv << " not a valid argument" << std::endl;
         return 1;
 
 
@@ -81,6 +90,9 @@ int decodeArg(string argv, int state)
 int testVector2()
 {
 
+    std::cout << "TestVector2 called" << std::endl;
+
+    
 
     return 0;
 }
