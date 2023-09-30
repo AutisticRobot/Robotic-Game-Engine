@@ -80,9 +80,8 @@ int decodeArg(string argv, int state)
         return 0;
     }
 
-    //default:
-        std::cout << "error: " << argv << " not a valid argument" << std::endl;
-        return 1;
+    std::cout << "error: " << argv << " not a valid argument" << std::endl;
+    return 1;
 
 
 }
@@ -92,7 +91,15 @@ int testVector2()
 
     std::cout << "TestVector2 called" << std::endl;
 
-    
+    gli::Vector2 testVector2(1,2);
+    std::cout << testVector2.normalize() << std::endl;
+    gli::Vector2 test2Vector2(1.f,2.f);
+    std::cout << test2Vector2.normalize() << std::endl;
+    std::cout << testVector2.x << ", " << testVector2.y << std::endl;
+    std::cout << test2Vector2.x << ", " << test2Vector2.y << std::endl;
 
+
+
+    std::cout << "TestVector2 END" << std::endl;
     return 0;
 }
