@@ -14,9 +14,8 @@ class Vector2
 {
 public:
  
-    //Vector2();
  
-    Vector2(T X, T Y)
+Vector2(T X, T Y)
 {
     x = X;
     y = Y;
@@ -26,7 +25,7 @@ public:
 
     
 
-    int normalize()
+int normalize()
 {
     T typChk = x;
     typChk = 3;
@@ -53,6 +52,13 @@ public:
     y = output.y;
     return 0;
 
+}
+Vector2& operator+=(Vector2 right)
+{
+    x += right.x;
+    y += right.y;
+
+    return *this;
 }
 
 public:
