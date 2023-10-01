@@ -25,7 +25,7 @@ Vector2(T X, T Y)
 
     
 
-int normalize()
+Vector2& normalize()
 {
     T typChk = x;
     typChk = 3;
@@ -50,7 +50,7 @@ int normalize()
 
     x = output.x;
     y = output.y;
-    return 0;
+    return *this;
 
 }
 Vector2& operator+=(Vector2 right)
@@ -60,6 +60,36 @@ Vector2& operator+=(Vector2 right)
 
     return *this;
 }
+Vector2 operator+(Vector2 right)
+{
+    Vector2 out(x, y);
+
+    out.x += right.x;
+    out.y += right.y;
+
+    return out;
+}
+Vector2& operator-=(Vector2 right)
+{
+    x -= right.x;
+    y -= right.y;
+
+    return *this;
+}
+Vector2 operator-(Vector2 right)
+{
+    Vector2 out(x, y);
+
+    out.x -= right.x;
+    out.y -= right.y;
+
+    return out;
+}
+Vector2 operator*(Vector2 right)
+Vector2 operator*=(Vector2 right)
+Vector2 operator/(Vector2 right)
+Vector2 operator/=(Vector2 right)
+
 
 public:
 
