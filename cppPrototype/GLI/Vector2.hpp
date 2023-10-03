@@ -85,10 +85,10 @@ Vector2 operator-(Vector2 right)
 
     return out;
 }
-Vector2 operator*(Vector2 right)
-Vector2 operator*=(Vector2 right)
-Vector2 operator/(Vector2 right)
-Vector2 operator/=(Vector2 right)
+Vector2 operator*(Vector2 right);
+Vector2 operator*=(Vector2 right);
+Vector2 operator/(Vector2 right);
+Vector2 operator/=(Vector2 right);
 
 
 public:
