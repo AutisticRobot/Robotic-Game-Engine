@@ -85,10 +85,34 @@ Vector2 operator-(Vector2 right)
 
     return out;
 }
-Vector2 operator*(Vector2 right);
-Vector2 operator*=(Vector2 right);
-Vector2 operator/(Vector2 right);
-Vector2 operator/=(Vector2 right);
+Vector2 operator*(Vector2 right)
+{
+    Vector2 out(x, y);
+    out.x *= right.x;
+    out.y *= right.x;
+    return out;
+}
+Vector2& operator*=(Vector2 right)
+{
+
+    x *= right.x;
+    y *= right.x;
+    return *this;
+}
+Vector2 operator/(Vector2 right)
+{
+    Vector2 out(x, y);
+    out.x /= right.x;
+    out.y /= right.x;
+    return out;
+}
+Vector2& operator/=(Vector2 right)
+{
+
+    x /= right.x;
+    y /= right.x;
+    return *this;
+}
 
 
 public:
