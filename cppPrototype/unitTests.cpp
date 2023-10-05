@@ -91,11 +91,13 @@ int testVector2()
 
     std::cout << "TestVector2 called" << std::endl;
 
-    gli::Vector2 testVector2(1,2);
-    std::cout << testVector2.normalize() << std::endl;
-    gli::Vector2 test2Vector2(1.f,2.f);
-    std::cout << test2Vector2.normalize() << std::endl;
+    gli::Vector2 testVector2(4,22);
+    gli::Vector2 test2Vector2(5.f,2.f);
     std::cout << testVector2.x << ", " << testVector2.y << std::endl;
+    std::cout << "*=" << std::endl;
+    std::cout << test2Vector2.x << ", " << test2Vector2.y << std::endl;
+    std::cout << "=" << std::endl;
+    test2Vector2 *= testVector2;
     std::cout << test2Vector2.x << ", " << test2Vector2.y << std::endl;
 
 

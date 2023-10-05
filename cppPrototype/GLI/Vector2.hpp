@@ -53,14 +53,16 @@ Vector2& normalize()
     return *this;
 
 }
-Vector2& operator+=(Vector2 right)
+template<typename U>
+Vector2& operator+=(Vector2<U> right)
 {
     x += right.x;
     y += right.y;
 
     return *this;
 }
-Vector2 operator+(Vector2 right)
+template<typename U>
+Vector2 operator+(Vector2<U> right)
 {
     Vector2 out(x, y);
 
@@ -69,14 +71,16 @@ Vector2 operator+(Vector2 right)
 
     return out;
 }
-Vector2& operator-=(Vector2 right)
+template<typename U>
+Vector2& operator-=(Vector2<U> right)
 {
     x -= right.x;
     y -= right.y;
 
     return *this;
 }
-Vector2 operator-(Vector2 right)
+template<typename U>
+Vector2 operator-(Vector2<U> right)
 {
     Vector2 out(x, y);
 
@@ -85,35 +89,37 @@ Vector2 operator-(Vector2 right)
 
     return out;
 }
-Vector2 operator*(Vector2 right)
+template<typename U>
+Vector2 operator*(Vector2<U> right)
 {
     Vector2 out(x, y);
     out.x *= right.x;
-    out.y *= right.x;
+    out.y *= right.y;
     return out;
 }
-Vector2& operator*=(Vector2 right)
+template<typename U>
+Vector2& operator*=(Vector2<U> right)
 {
-
     x *= right.x;
-    y *= right.x;
+    y *= right.y;
     return *this;
 }
-Vector2 operator/(Vector2 right)
+template<typename U>
+Vector2 operator/(Vector2<U> right)
 {
     Vector2 out(x, y);
     out.x /= right.x;
-    out.y /= right.x;
+    out.y /= right.y;
     return out;
 }
-Vector2& operator/=(Vector2 right)
+template<typename U>
+Vector2& operator/=(Vector2<U> right)
 {
 
     x /= right.x;
-    y /= right.x;
+    y /= right.y;
     return *this;
 }
-
 
 public:
 

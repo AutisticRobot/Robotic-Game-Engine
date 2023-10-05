@@ -6,7 +6,7 @@ RGE: $(PRE)RGE64.o
 	@g++ $(PRE)RGE64.o $(PRE)rendering.o $(PRIM)tri.o -o $(PRE)RGE -lsfml-graphics -lsfml-window -lsfml-system
 	@./$(PRE)RGE
 
-unitTest: clean $(PRE)unitTest.o
+unitTest: $(PRE)unitTest.o
 	@g++ $(PRE)unitTest.o $(PRE)rendering.o $(PRIM)tri.o -o $(PRE)unitTest -lsfml-graphics -lsfml-window -lsfml-system
 
 $(PRE)unitTest.o: unitTests.cpp $(PRE)rendering.o $(PRIM)tri.o
