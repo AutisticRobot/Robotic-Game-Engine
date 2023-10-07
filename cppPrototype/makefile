@@ -1,22 +1,24 @@
-PRE = build/
-PRIM = $(PRE)primitives/
-GLI = $(PRE)GLI/
+FPRE = build/
+PRIM = $(FPRE)primitives/
+GLI = $(FPRE)GLI/
+CC=@g++
+CFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
 
-RGE: $(PRE)RGE64.o
-	@g++ $(PRE)RGE64.o $(PRE)rendering.o $(PRIM)tri.o -o $(PRE)RGE -lsfml-graphics -lsfml-window -lsfml-system
-	@./$(PRE)RGE
+RGE: $(FPRE)RGE64.o
+	@g++ $(FPRE)RGE64.o $(FPRE)rendering.o $(PRIM)tri.o -o $(FPRE)RGE $(CFLAGS)
+	@./$(FPRE)RGE
 
-unitTest: $(PRE)unitTest.o
-	@g++ $(PRE)unitTest.o $(PRE)rendering.o $(PRIM)tri.o -o $(PRE)unitTest -lsfml-graphics -lsfml-window -lsfml-system
+unitTest: $(FPRE)unitTest.o
+	@g++ $(FPRE)unitTest.o $(FPRE)rendering.o $(PRIM)tri.o -o $(FPRE)unitTest $(CFLAGS)
 
-$(PRE)unitTest.o: unitTests.cpp $(PRE)rendering.o $(PRIM)tri.o
-	@g++ -c unitTests.cpp -o $(PRE)unitTest.o
+$(FPRE)unitTest.o: unitTests.cpp $(FPRE)rendering.o $(PRIM)tri.o
+	@g++ -c unitTests.cpp -o $(FPRE)unitTest.o
 
-$(PRE)RGE64.o: RGE64.cpp $(PRIM)tri.o $(PRE)rendering.o
-	@g++ -c RGE64.cpp -o $(PRE)RGE64.o
+$(FPRE)RGE64.o: RGE64.cpp $(PRIM)tri.o $(FPRE)rendering.o
+	@g++ -c RGE64.cpp -o $(FPRE)RGE64.o
 
-$(PRE)rendering.o: rendering.cpp
-	@g++ -c rendering.cpp -o $(PRE)rendering.o
+$(FPRE)rendering.o: rendering.cpp
+	@g++ -c rendering.cpp -o $(FPRE)rendering.o
 
 $(PRIM)tri.o: primitives/tri.cpp
 	@g++ -c primitives/tri.cpp -o $(PRIM)tri.o
