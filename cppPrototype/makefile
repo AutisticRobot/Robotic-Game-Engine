@@ -1,8 +1,14 @@
-FPRE = build/
-PRIM = $(FPRE)primitives/
-GLI = $(FPRE)GLI/
+FPRE =build/
+FILES =*.cpp primitives/*.cpp GLI/*.cpp
+VPATH =primitives GLI
+PRIM =$(FPRE)primitives/
+GLI =$(FPRE)GLI/
 CC=@g++
 CFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
+
+RGE1:
+	g++ $(FILES) -o $(FPRE)RGE $(CFLAGS)
+	@./$(FPRE)RGE
 
 RGE: $(FPRE)RGE64.o
 	@g++ $(FPRE)RGE64.o $(FPRE)rendering.o $(PRIM)tri.o -o $(FPRE)RGE $(CFLAGS)
