@@ -11,16 +11,16 @@ OFILES =$(FILES:%.cpp=build/%.o)
 
 
 RGE1: $(OFILES)
-	g++ $(OFILES) -o $(FPRE)RGE $(CFLAGS)
+	g++ $^ -o $(FPRE)RGE $(CFLAGS)
 	@./$(FPRE)RGE
 
-$(OFILES): $(FILES)
-	g++ -c $(FILES) -o 
+%.o: %.c %.h
+	g++ -c $^ -o $(FPRE)%.o
 
 test: 
 	@echo $(OFILES)
 	@echo $(FILES)
-	@echo $(FILES:%.cpp=build/%.o)
+	@echo $(OFILES:build/%.o=%.cpp)
 
 RGE: $(FPRE)RGE64.o
 	@g++ $(FPRE)RGE64.o $(FPRE)rendering.o $(PRIM)tri.o -o $(FPRE)RGE $(CFLAGS)
