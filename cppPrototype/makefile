@@ -1,36 +1,43 @@
-FPRE =build/
+BUILD =build
 VPATH =primitives GLI
-PRIM =$(FPRE)primitives/
-GLI =$(FPRE)GLI/
+PRIM =$(BUILD)/primitives/
+GLI =$(BUILD)/GLI/
 CC=@g++
 CFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
 
-DEPFLAGS = -MMD -MF $(@:.o=.d)
-deps := $(patsubst %.o,%.d,$(objs))
--include $(deps)
+#DEPFLAGS = -MMD -MF $(@:.o=.d)
+#deps := $(patsubst %.o,%.d,$(objs))
+#-include $(deps)
 
-objs := $(FPRE)RGE.o $(FPRE)rendering.o $(PRIM)tri.o
-FILES :=*.cpp primitives/*.cpp
+objs := $(BUILD)/RGE.o $(BUILD)/rendering.o $(PRIM)tri.o
+FILES :=$(wildcard *.cpp primitives/*.cpp)
 OFILES :=$(FILES:%.cpp=build/%.o)
 
 
-RGE1: RGE.o
-	g++ $^ -o $(FPRE)RGE $(CFLAGS)
-	@./$(FPRE)RGE
+
+
+RGE1: $(BUILD)RGE.o
+	g++ $^ -o $(BUILD)/RGE $(CFLAGS)
+	@./$(BUILD)/RGE
 
 test: 
 	@echo $(OFILES)
 	@echo $(FILES)
 
 RGE: $(objs)
-	@g++ $^ -o $(FPRE)RGE $(CFLAGS)
-	@./$(FPRE)RGE
+	@g++ $^ -o $(BUILD)/RGE $(CFLAGS)
+	@./$(BUILD)/RGE
 
-unitTest: $(FPRE)unitTest.o $(FPRE)rendering.o $(PRIM)tri.o
-	@g++ $^ -o $(FPRE)unitTest $(CFLAGS)
+unitTest: $(BUILD)/unitTest.o $(BUILD)/rendering.o $(PRIM)tri.o
+	@g++ $^ -o $(BUILD)/unitTest $(CFLAGS)
 
-build/%.o: %.cpp %.hpp
-	g++ -c $< -o build/$@
+$(objs): 
+	g++ -c $< -o $@
+
+#from stackoverflow
+#build/%.o : %.cpp
+#    mkdir -p ${dir $@}
+#    ${CC} -o $@ $< -c ${CFLAGS}
 
 clean:
 	@rm -rf build
