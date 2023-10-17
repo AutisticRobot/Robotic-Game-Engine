@@ -2,27 +2,26 @@ BUILD =build
 VPATH =primitives GLI
 PRIM =$(BUILD)/primitives/
 GLI =$(BUILD)/GLI/
-CC=@g++
+CC=g++
 CFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
 
 #DEPFLAGS = -MMD -MF $(@:.o=.d)
 #deps := $(patsubst %.o,%.d,$(objs))
 #-include $(deps)
 
-objs := $(BUILD)/RGE.o $(BUILD)/rendering.o $(PRIM)tri.o
-FILES :=$(wildcard *.cpp primitives/*.cpp)
+#objs := $(BUILD)/RGE.o $(BUILD)/rendering.o $(PRIM)tri.o
+FILES :=$(wildcard *.cpp primitives/*.cpp GLI/*.cpp)
 OFILES :=$(FILES:%.cpp=build/%.o)
 
 
 
 
-RGE1: $(BUILD)RGE.o
+RGE1: $(objs)
 	g++ $^ -o $(BUILD)/RGE $(CFLAGS)
 	@./$(BUILD)/RGE
 
-test: 
+test: $(OFILES)
 	@echo $(OFILES)
-	@echo $(FILES)
 
 RGE: $(objs)
 	@g++ $^ -o $(BUILD)/RGE $(CFLAGS)
@@ -31,13 +30,20 @@ RGE: $(objs)
 unitTest: $(BUILD)/unitTest.o $(BUILD)/rendering.o $(PRIM)tri.o
 	@g++ $^ -o $(BUILD)/unitTest $(CFLAGS)
 
-$(objs): 
-	g++ -c $< -o $@
+#$(objs): 
+#	g++ -c $< -o $@
 
-#from stackoverflow
-#build/%.o : %.cpp
-#    mkdir -p ${dir $@}
-#    ${CC} -o $@ $< -c ${CFLAGS}
+$(OFILES):build/%.o:%.cpp  #(patsubst $(BUILD)/%.o,%.cpp,$@)
+#    mkdir -p $(dir $@)#Copyed from a bigger mass of code form stackoverflow
+	@echo $@
+	@echo $^
+
+$(FILES):
+
+#$(OFILES): $@#(patsubst $(BUILD)/%.o,%.cpp,$@)
+#    mkdir -p $(dir $@)#Copyed from a bigger mass of code form stackoverflow
+#	$(CC) -c $< -o $@
+
 
 clean:
 	@rm -rf build
