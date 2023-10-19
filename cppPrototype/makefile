@@ -1,49 +1,35 @@
+#
+#TODO:
+#	Add header file tracking
+
 BUILD =build
-VPATH =primitives GLI
+VPATH =primitives GLI #posiblily used by make. Make may also search these specified folders
 PRIM =$(BUILD)/primitives/
 GLI =$(BUILD)/GLI/
 CC=g++
 CFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
 
-#DEPFLAGS = -MMD -MF $(@:.o=.d)
-#deps := $(patsubst %.o,%.d,$(objs))
-#-include $(deps)
-
-#objs := $(BUILD)/RGE.o $(BUILD)/rendering.o $(PRIM)tri.o
+#mass of file varribles
+objs := $(BUILD)/RGE.o $(BUILD)/rendering.o $(PRIM)tri.o
+heads := GLI/Vector2.hpp
 FILES :=$(wildcard *.cpp primitives/*.cpp GLI/*.cpp)
 OFILES :=$(FILES:%.cpp=build/%.o)
 
 
 
 
-RGE1: $(objs)
+RGE: $(objs) #$(heads)
 	g++ $^ -o $(BUILD)/RGE $(CFLAGS)
-	@./$(BUILD)/RGE
-
-test: $(OFILES)
-	@echo $(OFILES)
-
-RGE: $(objs)
-	@g++ $^ -o $(BUILD)/RGE $(CFLAGS)
 	@./$(BUILD)/RGE
 
 unitTest: $(BUILD)/unitTest.o $(BUILD)/rendering.o $(PRIM)tri.o
 	@g++ $^ -o $(BUILD)/unitTest $(CFLAGS)
 
-#$(objs): 
-#	g++ -c $< -o $@
-
-$(OFILES):build/%.o:%.cpp  #(patsubst $(BUILD)/%.o,%.cpp,$@)
+build/%.o:%.cpp  #(patsubst $(BUILD)/%.o,%.cpp,$@)
 #    mkdir -p $(dir $@)#Copyed from a bigger mass of code form stackoverflow
-	@echo $@
-	@echo $^
+	$(CC) -c $< -o $@
 
 $(FILES):
-
-#$(OFILES): $@#(patsubst $(BUILD)/%.o,%.cpp,$@)
-#    mkdir -p $(dir $@)#Copyed from a bigger mass of code form stackoverflow
-#	$(CC) -c $< -o $@
-
 
 clean:
 	@rm -rf build
