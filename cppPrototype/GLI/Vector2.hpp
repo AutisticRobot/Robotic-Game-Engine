@@ -1,7 +1,7 @@
 
 #pragma once
  
-//#include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
@@ -21,7 +21,10 @@ Vector2(T X, T Y)
     y = Y;
 }
 
-    //sf::Vector2 tosf();
+sf::Vector2<T> tosf()
+{
+    return sf::Vector2<T>(x,y);
+}
 
     
 
