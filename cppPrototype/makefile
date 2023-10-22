@@ -3,7 +3,8 @@
 #	Add header file tracking.   also try rule: $( code.getStuff(); )
 
 BUILD =build
-VPATH =primitives GLI #posiblily used by make. Make may also search these specified folders
+VPATH =primitives GLI objs#posiblily used by make. Make may also search these specified folders
+OBJS :=$(BUILD)/objs
 PRIM =$(BUILD)/primitives/
 GLI =$(BUILD)/GLI/
 CC=g++
@@ -35,7 +36,8 @@ $(FILES):
 
 clean:
 	@rm -rf build
-	@mkdir build
+	@mkdir $(BUILD)
 	@mkdir $(PRIM)
 	@mkdir $(GLI)
+	@mkdir $(OBJS)
 	@cp -r resources build
