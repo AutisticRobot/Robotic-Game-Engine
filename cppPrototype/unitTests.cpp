@@ -6,6 +6,7 @@
 #include "GLI/Vector2.hpp"
 #include "rendering.hpp"
 #include "primitives/tri.hpp"
+#include "dataCon.hpp"
 
 
 bool selfTest = false;
@@ -15,6 +16,7 @@ int argAll();
 int decodeArgs(int argc, char *argv[]);
 int decodeArg(string argv, int state = 0);
 int testVector2();
+int testHex2Dec();
 
 int main(int argc, char *argv[])
 {
@@ -39,7 +41,6 @@ int main(int argc, char *argv[])
     {
         testVector2();
     }
-
 
 
     std::cout << "End Diegnostic" << endl;
@@ -104,4 +105,13 @@ int testVector2()
 
     std::cout << "TestVector2 END" << std::endl;
     return 0;
+}
+
+int testHex2Dec()
+{
+
+    std::cout << hex2dec("A") << std::endl;
+    std::cout << hex2dec("B") << std::endl;
+
+
 }

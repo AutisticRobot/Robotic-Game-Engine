@@ -5,7 +5,20 @@
 int hex2dec(std::string inHex)
 {
     //test code
-    //also try hex[i]>=48
+
+    int out = 0;
+
+    for(int i=0;i<inHex.size();i++)
+    {
+        int val = 0;
+        if(inHex[i]>=48)
+        {
+            val = inHex[i] - 38;
+        }
+        return val;
+    }
+
+    /*
     if(inHex.at(0) == 'A')
     {
         return 10;
@@ -30,5 +43,12 @@ int hex2dec(std::string inHex)
     {
         return 15;
     }
+    */
+    return 0;
+}
+
+
+int hexChar2dec(char inHex)
+{
     return 0;
 }
