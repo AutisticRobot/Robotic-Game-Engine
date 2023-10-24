@@ -11,6 +11,7 @@
 
 bool selfTest = false;
 bool vector2 = false;
+bool hex2decTest = false;
 
 int argAll();
 int decodeArgs(int argc, char *argv[]);
@@ -41,6 +42,10 @@ int main(int argc, char *argv[])
     {
         testVector2();
     }
+    if(hex2decTest)
+    {
+        testHex2Dec();
+    }
 
 
     std::cout << "End Diegnostic" << endl;
@@ -50,6 +55,7 @@ int argAll()
 {
     selfTest = true;
     vector2 = true;
+    hex2decTest = true;
     return 0;
 }
 int decodeArgs(int argc, char *argv[])
@@ -109,9 +115,24 @@ int testVector2()
 
 int testHex2Dec()
 {
+    std::cout << "test hex to dec conversion start" << std::endl;
 
+    for(std::string i="0"-10;i[0]<9;i[0]++)
+    {
+
+        std::cout << hex2dec(i) << std::endl;
+
+    }
+    std::string test = "a";
+    std::cout << static_cast<int>(test[0]) << std::endl;
+    test[0]=65;
+    std::cout << static_cast<int>(test[0]) << std::endl;
+    std::cout << test << std::endl;
+    std::cout << hex2dec("5") << std::endl;
     std::cout << hex2dec("A") << std::endl;
+    std::cout << hex2dec("a") << std::endl;
     std::cout << hex2dec("B") << std::endl;
 
-
+    std::cout << "test hex to dec conversion end" << std::endl;
+    return 0;
 }
