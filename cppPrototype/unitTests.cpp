@@ -128,10 +128,11 @@ int testHex2Dec()
     test[0]=65;
     std::cout << static_cast<int>(test[0]) << std::endl;
     std::cout << test << std::endl;
-    std::cout << hex2dec("5") << std::endl;
+    std::cout << hex2dec("1") << std::endl;
     std::cout << hex2dec("A") << std::endl;
     std::cout << hex2dec("a") << std::endl;
     std::cout << hex2dec("B") << std::endl;
+    std::cout << hex2dec("B1") << std::endl;
 
     std::cout << "test hex to dec conversion end" << std::endl;
     return 0;

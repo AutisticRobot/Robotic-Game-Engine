@@ -4,39 +4,18 @@
 
 int hex2dec(std::string inHex)
 {
-    //test code
-    return hexChar2dec(inHex[0]);
-
     int out = 0;
+    //test code
+
+    for(int i=inHex.size()-1;i>=0;i--)
+    {
+        out *= 16;
+        out += hexChar2dec(inHex[i]);
+
+    }
 
 
-    /*
-    if(inHex.at(0) == 'A')
-    {
-        return 10;
-    }
-    if(inHex.at(0) == 'B')
-    {
-        return 11;
-    }
-    if(inHex.at(0) == 'C')
-    {
-        return 12;
-    }
-    if(inHex.at(0) == 'D')
-    {
-        return 13;
-    }
-    if(inHex.at(0) == 'E')
-    {
-        return 14;
-    }
-    if(inHex.at(0) == 'F')
-    {
-        return 15;
-    }
-    */
-    return 0;
+    return out;
 }
 
 
