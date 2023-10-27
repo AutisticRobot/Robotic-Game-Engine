@@ -133,6 +133,8 @@ int testHex2Dec()
     std::cout << hex2dec("a") << std::endl;
     std::cout << hex2dec("B") << std::endl;
     std::cout << hex2dec("B1") << std::endl;
+    std::cout << hex2dec("#FFFFFF") << std::endl;
+    std::cout << hex2dec("FFFFFF") << std::endl;
 
     std::cout << "test hex to dec conversion end" << std::endl;
     return 0;
