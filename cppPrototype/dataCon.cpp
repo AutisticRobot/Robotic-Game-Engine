@@ -2,6 +2,21 @@
 #include "dataCon.hpp"
 
 
+int* hexArr2dec(std::string inHex, int divSize)
+{
+    int* out;
+    int outSize = inHex.size() / divSize;
+    out = new int(outSize);
+
+    for(int i=0;i<outSize;i++)
+    {
+        
+    }
+
+    return out;
+}
+
+
 double hex2dec(std::string inHex)
 {
     double out = 0;
