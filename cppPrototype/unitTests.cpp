@@ -131,10 +131,22 @@ int testHex2Dec()
     std::cout << hex2dec("1") << std::endl;
     std::cout << hex2dec("A") << std::endl;
     std::cout << hex2dec("a") << std::endl;
-    std::cout << hex2dec("B") << std::endl;
-    std::cout << hex2dec("B1") << std::endl;
+    std::cout << hex2dec("3E") << std::endl;
+    std::cout << hex2dec("1A") << std::endl;
     std::cout << hex2dec("#FFFFFF") << std::endl;
     std::cout << hex2dec("FFFFFF") << std::endl;
+    std::cout << "test hex array:" << std::endl;
+    std::cout << "inHex: " << "1A3E4" << std::endl;
+
+    int testLen;
+    int *testingHex = hex2decArr("1A3E4", 2, testLen);
+
+    std::cout << 5/2 << std::endl;
+    for(int i=0;i<testLen;i++)
+    {
+        std::cout << testingHex[i] << std::endl;
+    }
+
 
     std::cout << "test hex to dec conversion end" << std::endl;
     return 0;

@@ -2,15 +2,28 @@
 #include "dataCon.hpp"
 
 
-int* hexArr2dec(std::string inHex, int divSize)
+int* hex2decArr(std::string inHex, int divSize, int& outSize)
 {
     int* out;
-    int outSize = inHex.size() / divSize;
+    outSize = (inHex.size() / divSize) + 1;
     out = new int(outSize);
 
     for(int i=0;i<outSize;i++)
     {
-        
+        std::string subStr = "";
+        for(int a=0;a<divSize;a++)
+        {
+            int cPos = a+(i*divSize);
+            if(cPos<inHex.size())
+            {
+                subStr += inHex[cPos];
+            }else{
+                subStr += '#';
+            }
+        }
+
+        out[i] = hex2dec(subStr);
+
     }
 
     return out;
