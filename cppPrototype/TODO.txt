@@ -1,0 +1,4 @@
+  Requirements for making the first game.
+-Texture loading
+-File i/o
+-export runtime
