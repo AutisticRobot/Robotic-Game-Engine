@@ -1,4 +1,4 @@
-#include "tri.hpp"
+#include "../headers/primitives/tri.hpp"
 
 
 tri::tri()

@@ -3,7 +3,7 @@
 #	Add header file tracking.   also try rule: $( code.getStuff(); )
 
 BUILD =build
-VPATH =primitives GLI objs physics headers#posiblily used by make to search specified folders. I am not shure, so i just use it to delare all folders
+VPATH =primitives GLI objs physics#posiblily used by make. Make may also search these specified folders
 OBJS :=$(BUILD)/objs
 PHY :=$(BUILD)/physics
 PRIM =$(BUILD)/primitives/
@@ -15,7 +15,7 @@ CFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
 objs := $(BUILD)/RGE.o $(BUILD)/rendering.o $(PRIM)tri.o
 testObjs := $(BUILD)/unitTests.o $(BUILD)/rendering.o $(PRIM)tri.o $(BUILD)/dataCon.o
 
-heads := headers/GLI/Vector2.hpp
+heads := GLI/Vector2.hpp
 FILES :=$(wildcard *.cpp primitives/*.cpp GLI/*.cpp)
 OFILES :=$(FILES:%.cpp=build/%.o)
 

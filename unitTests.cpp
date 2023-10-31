@@ -3,10 +3,10 @@
 #include <cstdlib>
 #include <string>
 #include <SFML/Graphics.hpp>
-#include "GLI/Vector2.hpp"
-#include "rendering.hpp"
-#include "primitives/tri.hpp"
-#include "dataCon.hpp"
+#include "headers/GLI/Vector2.hpp"
+#include "headers/rendering.hpp"
+#include "headers/primitives/tri.hpp"
+#include "headers/dataCon.hpp"
 
 
 bool selfTest = false;

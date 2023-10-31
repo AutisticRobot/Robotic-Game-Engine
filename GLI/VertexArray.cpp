@@ -1,4 +1,4 @@
-#include "VertexArray.hpp"
+#include "../headers/GLI/VertexArray.hpp"
 
     VertexArray()
     {

@@ -14,8 +14,8 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Vector2.hpp>
-#include "rendering.hpp"
-#include "primitives/tri.hpp"
+#include "headers/rendering.hpp"
+#include "headers/primitives/tri.hpp"
 
 using namespace std;
 

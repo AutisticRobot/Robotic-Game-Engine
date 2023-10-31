@@ -1,5 +1,5 @@
-#include "cprint.hpp"
-#include "dataCon.hpp"
+#include "headers/cprint.hpp"
+#include "headers/dataCon.hpp"
 
 
 template<typename T>

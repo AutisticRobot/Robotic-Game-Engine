@@ -1,5 +1,5 @@
 
-#include "dataCon.hpp"
+#include "headers/dataCon.hpp"
 
 
 int* hex2decArr(std::string inHex, int divSize, int& outSize)
