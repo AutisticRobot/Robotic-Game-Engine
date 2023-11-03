@@ -3,7 +3,7 @@
 #	Add header file tracking.   also try rule: $( code.getStuff(); )
 
 BUILD =build
-VPATH =primitives GLI objs physics#posiblily used by make. Make may also search these specified folders
+VPATH =primitives GLI objs physics tests#posiblily used by make. Make may also search these specified folders
 OBJS :=$(BUILD)/objs
 PHY :=$(BUILD)/physics
 PRIM =$(BUILD)/primitives/
