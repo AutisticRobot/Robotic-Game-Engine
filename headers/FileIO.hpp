@@ -18,3 +18,5 @@ struct BumbAllocator
 };
 
 BumbAllocator make_bump_allocator(size_t size);
+
+char* bump_alloc(BumbAllocator* bumpAllocator, size_t size);
