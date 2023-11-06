@@ -1,6 +1,7 @@
 #
 #TODO:
 #	Add header file tracking.   also try rule: $( code.getStuff(); )
+#	windows builder with mingW
 
 BUILD =build
 VPATH =primitives GLI objs physics headers tests#posiblily used by make to search specified folders. I am not shure, so i just use it to delare all folders
