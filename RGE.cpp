@@ -14,6 +14,8 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Vector2.hpp>
+#include "SFML/Graphics/RenderWindow.hpp"
+#include "SFML/Window/Window.hpp"
 #include "headers/rendering.hpp"
 #include "headers/primitives/tri.hpp"
 
@@ -26,6 +28,8 @@ sf::Vector2f GRatio;
 sf::Text mineText;
 sf::Font font;
 tri testTri;
+
+int runtimeLoop(sf::RenderWindow &window);
 
 int main()
 {
@@ -44,29 +48,33 @@ int main()
 
     while (window.isOpen())
     {
-        winSize = window.getSize();
-        winPos = window.getPosition();
-        GRatio.x = static_cast<float>(winSize.x);
-        GRatio.y = static_cast<float>(winSize.y);
-        testTri.updateRatio(GRatio);
-        mineText.setString(std::to_string(frame));
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-            {
-                window.close();
-            }
-        }
-
-        window.clear();
-        window.draw(testTri.getTri());
-        window.draw(mineText);
-
-        window.display();
-        frame++;
+        runtimeLoop(window);
     }
 
     return 0;
 }
 
+int runtimeLoop(sf::RenderWindow &window)
+{
+    winSize = window.getSize();
+    winPos = window.getPosition();
+    GRatio.x = static_cast<float>(winSize.x);
+    GRatio.y = static_cast<float>(winSize.y);
+    testTri.updateRatio(GRatio);
+    mineText.setString(std::to_string(frame));
+    sf::Event event;
+    while (window.pollEvent(event))
+    {
+        if (event.type == sf::Event::Closed)
+        {
+            window.close();
+        }
+    }
+    window.clear();
+    window.draw(testTri.getTri());
+    window.draw(mineText);
+    window.display();
+    frame++;
+
+    return 0;
+}
