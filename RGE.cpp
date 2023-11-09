@@ -22,6 +22,7 @@
 using namespace std;
 
 int frame = 0;
+float delta;
 sf::Vector2u winSize(300,200);//unsigned int Vector2 for window size
 sf::Vector2i winPos(0,0);//unsigned int Vector2 for window size
 sf::Vector2f GRatio;
@@ -30,6 +31,7 @@ sf::Font font;
 tri testTri;
 
 int runtimeLoop(sf::RenderWindow &window);
+void *pFrame(float delta);
 
 int main()
 {
@@ -70,6 +72,9 @@ int runtimeLoop(sf::RenderWindow &window)
             window.close();
         }
     }
+
+    pFrame(delta);
+
     window.clear();
     window.draw(testTri.getTri());
     window.draw(mineText);
