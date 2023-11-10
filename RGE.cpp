@@ -18,6 +18,7 @@
 #include "SFML/Window/Window.hpp"
 #include "headers/rendering.hpp"
 #include "headers/primitives/tri.hpp"
+#include "headers/testProject.hpp"
 
 using namespace std;
 
@@ -31,7 +32,6 @@ sf::Font font;
 tri testTri;
 
 int runtimeLoop(sf::RenderWindow &window);
-void *pFrame(float delta);
 
 int main()
 {

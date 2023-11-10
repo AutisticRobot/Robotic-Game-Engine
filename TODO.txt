@@ -2,3 +2,6 @@
 -Texture loading
 -File i/o
 -export runtime
+
+  eventuial Requirements
+make project functions called by runtime not require engine to be fully recompiled.
