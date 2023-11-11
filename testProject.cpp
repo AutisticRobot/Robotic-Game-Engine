@@ -1,10 +1,9 @@
 
-#include "headers/testProject.hpp"
-#include "RGE.cpp"
+//#include "headers/testProject.hpp"
 
-void test()
+#include "headers/RGE.hpp"
+
+void pFrame(float delta)
 {
-
+    frame--;
 }
-
-void pFrame();

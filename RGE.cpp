@@ -7,18 +7,8 @@
 //Dependences
 //SFML
 
-
-#include <iostream>
-#include <fstream>
-#include <cstdlib>
-#include <string>
-#include <SFML/Graphics.hpp>
-#include <SFML/System/Vector2.hpp>
-#include "SFML/Graphics/RenderWindow.hpp"
-#include "SFML/Window/Window.hpp"
-#include "headers/rendering.hpp"
-#include "headers/primitives/tri.hpp"
-#include "headers/testProject.hpp"
+#include "headers/RGE.hpp"
+//#include "headers/testProject.hpp"
 
 using namespace std;
 

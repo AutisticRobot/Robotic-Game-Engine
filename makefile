@@ -13,7 +13,7 @@ CC=g++
 CFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
 
 #mass of file varribles
-objs := $(BUILD)/RGE.o $(BUILD)/rendering.o $(PRIM)tri.o
+objs := $(BUILD)/RGE.o $(BUILD)/rendering.o $(PRIM)tri.o $(BUILD)/testProject.o
 testObjs := $(BUILD)/unitTests.o $(BUILD)/rendering.o $(PRIM)tri.o $(BUILD)/dataCon.o
 
 heads := headers/GLI/Vector2.hpp
