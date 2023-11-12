@@ -30,7 +30,7 @@ RGE: $(objs) #$(heads)
 unitTest: $(testObjs)
 	@g++ $^ -o $@ $(CFLAGS)
 
-build/%.o:%.cpp
+build/%.o:%.cpp headers/%.hpp
 #    mkdir -p $(dir $@)#Copyed from a bigger mass of code form stackoverflow
 	$(CC) -c $< -o $@
 

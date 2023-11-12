@@ -5,5 +5,5 @@
 
 void pFrame(float delta)
 {
-    frame--;
+    frame++;
 }

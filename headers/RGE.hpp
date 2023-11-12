@@ -12,5 +12,6 @@
 #include "rendering.hpp"
 #include "primitives/tri.hpp"
 
-
 void pFrame(float delta);
+
+extern int frame;
