@@ -14,4 +14,6 @@
 
 void pFrame(float delta);
 
+void Start();
+
 extern int frame;

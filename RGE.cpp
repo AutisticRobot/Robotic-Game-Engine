@@ -36,8 +36,7 @@ int main()
 
     
 
-    // no texture coordinates here, we'll see that later
-
+    Start();
     while (window.isOpen())
     {
         runtimeLoop(window);
