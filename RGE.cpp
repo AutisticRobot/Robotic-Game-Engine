@@ -1,11 +1,23 @@
 //Robotic Game Engine
 //by Tyler Michael Kormannn (tylerkormann.com)
-//Version 0.0.0.x
+//Version 0.0.1.x
 //
 //Curently the worlds worst game engine!! : D
 //
 //Dependences
 //SFML
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <string>
+#include <SFML/Graphics.hpp>
+#include <SFML/System/Vector2.hpp>
+#include "SFML/Graphics/RenderWindow.hpp"
+#include "SFML/Window/Window.hpp"
+#include "headers/rendering.hpp"
+#include "headers/primitives/tri.hpp"
+
 
 #include "headers/RGE.hpp"
 //#include "headers/testProject.hpp"
