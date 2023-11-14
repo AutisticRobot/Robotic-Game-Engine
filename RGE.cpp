@@ -33,7 +33,8 @@ sf::Text mineText;
 sf::Font font;
 tri testTri;
 
-int runtimeLoop(sf::RenderWindow &window);
+//local functions
+int _runtimeLoop(sf::RenderWindow &window);// runs every SFML frame
 
 int main()
 {
@@ -51,13 +52,13 @@ int main()
     Start();
     while (window.isOpen())
     {
-        runtimeLoop(window);
+        _runtimeLoop(window);
     }
 
     return 0;
 }
 
-int runtimeLoop(sf::RenderWindow &window)
+int _runtimeLoop(sf::RenderWindow &window)
 {
     winSize = window.getSize();
     winPos = window.getPosition();
@@ -84,3 +85,10 @@ int runtimeLoop(sf::RenderWindow &window)
 
     return 0;
 }
+
+
+//########################################################################################################################################################//
+//                                                                                                                                                        //
+//                                                                    Robotic Game Engine Global Functions                                                //
+//                                                                                                                                                        //
+//########################################################################################################################################################//
