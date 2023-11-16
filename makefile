@@ -4,16 +4,17 @@
 #	windows builder with mingW
 
 BUILD =build
-VPATH =primitives GLI objs physics headers tests#posiblily used by make to search specified folders. I am not shure, so i just use it to delare all folders
-OBJS :=$(BUILD)/objs
+VPATH =primitives GLI nodes physics headers tests#posiblily used by make to search specified folders. I am not shure, so i just use it to delare all folders
+NODES :=$(BUILD)/nodes
 PHY :=$(BUILD)/physics
 PRIM =$(BUILD)/primitives/
 GLI =$(BUILD)/GLI/
+PRO =$(BUILD)/testProject/
 CC=g++
 CFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
 
 #mass of file varribles
-objs := $(BUILD)/RGE.o $(BUILD)/rendering.o $(PRIM)tri.o $(BUILD)/testProject.o
+objs := $(BUILD)/RGE.o $(BUILD)/rendering.o $(PRIM)tri.o $(PRO)testProject.o $(PRO)player.o
 testObjs := $(BUILD)/unitTests.o $(BUILD)/rendering.o $(PRIM)tri.o $(BUILD)/dataCon.o
 
 heads := headers/GLI/Vector2.hpp
@@ -41,6 +42,7 @@ clean:
 	@mkdir $(BUILD)
 	@mkdir $(PRIM)
 	@mkdir $(GLI)
-	@mkdir $(OBJS)
+	@mkdir $(NODES)
 	@mkdir $(PHY)
+	@mkdir $(PRO)
 	@cp -r resources build
