@@ -4,9 +4,10 @@
 #	windows builder with mingW
 
 BUILD =build
-VPATH =primitives GLI nodes physics headers tests#posiblily used by make to search specified folders. I am not shure, so i just use it to delare all folders
+VPATH =primitives GLI nodes RDP AER headers tests#posiblily used by make to search specified folders. I am not shure, so i just use it to delare all folders
 NODES :=$(BUILD)/nodes
-PHY :=$(BUILD)/physics
+PHY :=$(BUILD)/RDP
+REND :=$(BUILD)/AER
 PRIM =$(BUILD)/primitives/
 GLI =$(BUILD)/GLI/
 PRO =$(BUILD)/testProject/
