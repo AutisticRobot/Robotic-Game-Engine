@@ -33,6 +33,10 @@ sf::Text mineText;
 sf::Font font;
 tri testTri;
 
+//array of pointers to all known nodes
+void *allNodes[16];
+int allNodesSize = 16;
+
 //local functions
 int _runtimeLoop(sf::RenderWindow &window);// runs every SFML frame
 
