@@ -34,11 +34,12 @@ sf::Font font;
 tri testTri;
 
 //array of pointers to all known nodes
-void *allNodes[16];
-int allNodesSize = 16;
+void *_allNodes[16];
+int _allNodesSize = 16;
 
 //local functions
 int _runtimeLoop(sf::RenderWindow &window);// runs every SFML frame
+int _addNode();//adds a node to the main array.
 
 int main()
 {
