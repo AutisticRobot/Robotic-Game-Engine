@@ -34,12 +34,12 @@ sf::Font font;
 tri testTri;
 
 //array of pointers to all known nodes
-void *_allNodes[16];
+void *_allNodes[16] = {};
 int _allNodesSize = 16;
 
 //local functions
 int _runtimeLoop(sf::RenderWindow &window);// runs every SFML frame
-int _addNode();//adds a node to the main array.
+int _addNode(void *inNode);//adds a node to the main array.
 
 int main()
 {
@@ -87,6 +87,14 @@ int _runtimeLoop(sf::RenderWindow &window)
     window.draw(mineText);
     window.display();
     frame++;
+
+    return 0;
+}
+
+
+int _addNode(void *inNode)//adds a node to the main array.
+{
+
 
     return 0;
 }
