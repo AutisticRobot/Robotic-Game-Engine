@@ -34,7 +34,8 @@ sf::Font font;
 tri testTri;
 
 //array of pointers to all known nodes
-void *_allNodes[16] = {};
+void *_allNodes[16] = {0};
+int _allNodesCnt = 0;
 int _allNodesSize = 16;
 
 //local functions
@@ -94,6 +95,15 @@ int _runtimeLoop(sf::RenderWindow &window)
 
 int _addNode(void *inNode)//adds a node to the main array.
 {
+    void *tmp[_allNodesCnt];
+    if(_allNodesCnt >= _allNodesSize)
+    {
+        tmp[_allNodesSize] = _allNodes;
+        _allNodes[_allNodesSize *= 2] = tmp;
+    }
+
+    _allNodes[_allNodesCnt] = inNode;
+    _allNodesCnt++;
 
 
     return 0;
