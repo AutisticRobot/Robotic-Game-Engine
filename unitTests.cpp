@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
         if(std::string(argv[1]) == "all")
         {
             argAll();
+            std::cout << "update test" << std::endl;
         }
         if(std::string(argv[1]) == "-l")
         {
@@ -45,6 +46,7 @@ int main(int argc, char *argv[])
     if(hex2decTest)
     {
         testHex2Dec();
+        std::cout << "native hex test: 0x063AB \n" << 0x063AB << std::endl;
     }
 
 

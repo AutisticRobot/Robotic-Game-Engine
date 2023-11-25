@@ -30,9 +30,14 @@ RGE: $(objs) #$(heads)
 	@./$(BUILD)/RGE
 
 unitTest: $(testObjs)
-	@g++ $^ -o $@ $(CFLAGS)
+	@g++ $^ -o $(BUILD)/$@ $(CFLAGS)
 
 build/%.o:%.cpp headers/%.hpp
+#    mkdir -p $(dir $@)#Copyed from a bigger mass of code form stackoverflow
+	$(CC) -c $< -o $@
+
+
+build/%.o:%.cpp
 #    mkdir -p $(dir $@)#Copyed from a bigger mass of code form stackoverflow
 	$(CC) -c $< -o $@
 
