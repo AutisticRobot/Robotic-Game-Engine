@@ -1,9 +1,12 @@
 
 #include "../GLI/Vector2.hpp"
+#include <string>
 
 class camera
 {
     public:
+
+    std::string nodeID;
 
     camera();
 

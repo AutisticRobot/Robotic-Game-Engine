@@ -1,8 +1,12 @@
 #include "../GLI/Vector2.hpp"
+#include <string>
 
 class node
 {
     public:
+
+
+        std::string nodeID;
 
         node(gli::Vector2<float> pos);
 
