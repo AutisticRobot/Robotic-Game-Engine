@@ -15,8 +15,8 @@ CC=g++
 CFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
 
 #mass of file varribles
-objs := $(BUILD)/RGE.o $(BUILD)/rendering.o $(PRIM)tri.o $(PRO)testProject.o $(PRO)player.o
-testObjs := $(BUILD)/unitTests.o $(BUILD)/rendering.o $(PRIM)tri.o $(BUILD)/dataCon.o
+objs := $(BUILD)/RGE.o $(REND)/rendering.o $(PRIM)tri.o $(PRO)testProject.o $(PRO)player.o
+testObjs := $(BUILD)/unitTests.o $(REND)/rendering.o $(PRIM)tri.o $(BUILD)/dataCon.o
 
 heads := headers/GLI/Vector2.hpp
 FILES :=$(wildcard *.cpp primitives/*.cpp GLI/*.cpp)
