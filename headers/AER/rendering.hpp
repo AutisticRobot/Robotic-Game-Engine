@@ -8,9 +8,9 @@
 #include <string>
 using namespace std;
 
+
+
 sf::VertexArray renerTri(sf::Vector2i winPos, sf::Vector2u winSize);
 void textMine(sf::Text &text, sf::Font &font);
 
 
-
-void textMine(sf::Text &text, sf::Font &font);

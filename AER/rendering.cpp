@@ -4,6 +4,10 @@
 using namespace std;
 
 
+void *_allRendNodes[16] = {0};
+int _allRendNodesCnt = 0;
+int _allRendNodesSize = 16;
+
 void textMine(sf::Text &text, sf::Font &font)
 {
     if (!font.loadFromFile("resources/fonts/Minecraftia.ttf"))
