@@ -15,7 +15,7 @@
 #include <SFML/System/Vector2.hpp>
 #include "SFML/Graphics/RenderWindow.hpp"
 #include "SFML/Window/Window.hpp"
-#include "headers/rendering.hpp"
+#include "headers/AER/rendering.hpp"
 #include "headers/primitives/tri.hpp"
 
 

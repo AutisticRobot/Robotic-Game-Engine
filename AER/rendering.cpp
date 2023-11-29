@@ -8,6 +8,20 @@ void *_allRendNodes[16] = {0};
 int _allRendNodesCnt = 0;
 int _allRendNodesSize = 16;
 
+int renderLoop(sf::RenderWindow &window)
+{
+
+
+
+    return 0;
+}
+
+//needs some work
+//sf::VertexArray renerTri(sf::Vector2i winPos, sf::Vector2u winSize)
+//{
+//    
+//}
+
 void textMine(sf::Text &text, sf::Font &font)
 {
     if (!font.loadFromFile("resources/fonts/Minecraftia.ttf"))
