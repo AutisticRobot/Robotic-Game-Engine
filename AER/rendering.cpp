@@ -5,8 +5,13 @@ using namespace std;
 
 
 void *_allRendNodes[16] = {0};
-int _allRendNodesCnt = 0;
-int _allRendNodesSize = 16;
+int   _allRendNodesCnt = 0;
+int   _allRendNodesSize = 16;
+
+void *_allCamNodes[4] = {0};
+int   _allCamNodesCnt = 0;
+int   _allCamNodesSize = 4;
+
 
 int renderLoop(sf::RenderWindow &window)
 {
@@ -21,6 +26,38 @@ int renderLoop(sf::RenderWindow &window)
 //{
 //    
 //}
+
+
+int _addRendNode(void *inNode)//adds a node to the main array.
+{
+    void *tmp[_allRendNodesCnt];
+    if(_allRendNodesCnt >= _allRendNodesSize)
+    {
+        tmp[_allRendNodesSize] = _allRendNodes;
+        _allRendNodes[_allRendNodesSize *= 2] = tmp;
+    }
+
+    _allRendNodes[_allRendNodesCnt] = inNode;
+    _allRendNodesCnt++;
+
+
+    return 0;
+}
+int _addCamNode(void *inNode)//adds a node to the main array.
+{
+    void *tmp[_allCamNodesCnt];
+    if(_allCamNodesCnt >= _allCamNodesSize)
+    {
+        tmp[_allCamNodesSize] = _allCamNodes;
+        _allCamNodes[_allCamNodesSize *= 2] = tmp;
+    }
+
+    _allCamNodes[_allCamNodesCnt] = inNode;
+    _allCamNodesCnt++;
+
+
+    return 0;
+}
 
 void textMine(sf::Text &text, sf::Font &font)
 {

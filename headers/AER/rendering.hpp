@@ -12,6 +12,8 @@ using namespace std;
 
 
 int renderLoop(sf::RenderWindow &window);
+int _addRendNode(void *inNode);
+int _addCamNode(void *inNode);
 sf::VertexArray renerTri(sf::Vector2i winPos, sf::Vector2u winSize);
 void textMine(sf::Text &text, sf::Font &font);
 
