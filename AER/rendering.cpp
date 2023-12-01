@@ -11,12 +11,21 @@ int   _allRendNodesSize = 16;
 void *_allCamNodes[4] = {0};
 int   _allCamNodesCnt = 0;
 int   _allCamNodesSize = 4;
+int   _ActCam = 0;
 
 
 int renderLoop(sf::RenderWindow &window)
 {
 
 
+
+    return 0;
+}
+
+
+int setActCam(int ID)
+{
+    _ActCam = ID;
 
     return 0;
 }

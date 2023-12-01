@@ -12,6 +12,7 @@ using namespace std;
 
 
 int renderLoop(sf::RenderWindow &window);
+int setActCam(int ID);
 int _addRendNode(void *inNode);
 int _addCamNode(void *inNode);
 sf::VertexArray renerTri(sf::Vector2i winPos, sf::Vector2u winSize);
